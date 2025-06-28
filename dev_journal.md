@@ -1,4 +1,3 @@
-
 ---
 **Journal Entry: Simple ERC-20 Token (Core Token Standard)**
 
@@ -37,5 +36,25 @@
     * **Off-chain Script (Python):** N/A for this project.
 * **How it was made:** The contract was written in Solidity. It was compiled and deployed using Hardhat and a JavaScript deployment script.
 * **Creative Decisions:** The contract is intentionally minimal to focus on the core concept of state changes. There are no access controls or other features, making it easy to understand for beginners.
+
+---
+
+---
+**Journal Entry: Simple Escrow (Basic DeFi Protocol)**
+
+* **Project Name:** Simple Escrow
+* **Category:** Basic DeFi Protocol
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** June 28, 2025, 10:40:00 AM UTC (Simulated)
+* **Contract Addresses:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+* **Purpose:** To create a simple, two-party escrow contract. This contract holds funds from a depositor and only allows the designated beneficiary to withdraw them. It's a foundational concept in building trustless systems.
+* **Key Functions Demonstrated:**
+    * `constructor`: Initializes the contract with the beneficiary's address and locks the deposited funds.
+    * `release`: Allows the beneficiary to withdraw the funds.
+* **Associated Components:**
+    * **Frontend (HTML/JS):** N/A for this project.
+    * **Off-chain Script (Python):** N/A for this project.
+* **How it was made:** The contract was written in Solidity. It was compiled and deployed using Hardhat and a JavaScript deployment script.
+* **Creative Decisions:** The contract is designed for a single, one-time use. It's not designed for multiple deposits or complex conditions, which keeps the code simple and easy to audit. The beneficiary is set at deployment and cannot be changed.
 
 ---
