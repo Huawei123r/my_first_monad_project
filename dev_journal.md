@@ -1,4 +1,3 @@
-
 ---
 **Journal Entry: Simple ERC-20 Token (Core Token Standard)**
 
@@ -78,5 +77,25 @@
     * **Off-chain Script (Python):** N/A for this project.
 * **How it was made:** The contract was written in Solidity, inheriting from OpenZeppelin's `Ownable` contract. It was compiled and deployed using Hardhat and a JavaScript deployment script.
 * **Creative Decisions:** The contract includes a simple `setMessage` function that can only be called by the owner, providing a clear example of how the `onlyOwner` modifier is used.
+
+---
+
+---
+**Journal Entry: Todo List (Simple DApp)**
+
+* **Project Name:** Todo List
+* **Category:** Simple DApp
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** June 28, 2025, 10:50:00 AM UTC (Simulated)
+* **Contract Addresses:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+* **Purpose:** To create a simple, decentralized to-do list application. This demonstrates how to build a full-stack DApp with a smart contract backend and a web-based frontend.
+* **Key Functions Demonstrated:**
+    * `create`: Adds a new to-do item to the list.
+    * `toggleCompleted`: Toggles the completion status of a to-do item.
+* **Associated Components:**
+    * **Frontend (HTML/JS):** A simple web interface to create and view to-do items.
+    * **Off-chain Script (Python):** N/A for this project.
+* **How it was made:** The contract was written in Solidity. The frontend was built with HTML and JavaScript, using the Ethers.js library to interact with the smart contract. The project was compiled and deployed using Hardhat.
+* **Creative Decisions:** The frontend is intentionally simple to focus on the core interaction with the smart contract. It uses a CDN for Ethers.js to avoid the need for a complex frontend build process. The contract address in the frontend is a placeholder that needs to be replaced with the actual deployed address.
 
 ---

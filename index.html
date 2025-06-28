@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+</head>
+<body>
+  <h1>Todo List</h1>
+  <input id="new-todo" type="text" placeholder="New todo">
+  <button onclick="createTodo()">Create</button>
+  <ul id="todos"></ul>
+
+  <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"></script>
+  <script>
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    const signer = provider.getSigner();
+    const contractAddress = "YOUR_CONTRACT_ADDRESS"; // Replace with your deployed contract address
+    const contractABI = [
+      {
+        "inputs": [
+          {
+            "internalType": "string",
+            "name": "_text",
+            "type": "string"
+          }
+        ],
+        "name": "create",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "_index",
+            "type": "uint256"
+          }
+        ],
+        "name": "toggleCompleted",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+      },
+      {
+        "inputs": [
+          {
+            "internalType": "uint256",
+            "name": "",
+            "type": "uint256"
+          }
+        ],
+        "name": "todos",
+        "outputs": [
+          {
+            "internalType": "string",
+            "name": "text",
+            "type": "string"
+          },
+          {
+            "internalType": "bool",
+            "name": "completed",
+            "type": "bool"
+          }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+      }
+    ];
+
+    const contract = new ethers.Contract(contractAddress, contractABI, signer);
+
+    async function createTodo() {
+      const newTodoText = document.getElementById("new-todo").value;
+      await contract.create(newTodoText);
+    }
+
+    async function renderTodos() {
+      const todosElement = document.getElementById("todos");
+      todosElement.innerHTML = "";
+      let i = 0;
+      while (true) {
+        try {
+          const todo = await contract.todos(i);
+          const todoElement = document.createElement("li");
+          todoElement.innerText = todo.text;
+          if (todo.completed) {
+            todoElement.style.textDecoration = "line-through";
+          }
+          todoElement.onclick = () => toggleCompleted(i);
+          todosElement.appendChild(todoElement);
+          i++;
+        } catch (e) {
+          break;
+        }
+      }
+    }
+
+    window.ethereum.enable().then(() => {
+      renderTodos();
+    });
+  </script>
+</body>
+</html>
