@@ -1,4 +1,3 @@
-
 ---
 **Journal Entry: Simple ERC-20 Token (Core Token Standard)**
 
@@ -120,5 +119,25 @@
     * **Off-chain Script (Python):** N/A for this project.
 * **How it was made:** The contract was written in Solidity. It was deployed using a Hardhat script that also deployed a new `SimpleToken` to be used with the faucet.
 * **Creative Decisions:** The faucet has a 24-hour cooldown period for each user to prevent abuse. The owner can adjust the withdrawal amount, providing flexibility. The contract can also receive Ether to be used for gas fees when dispensing tokens.
+
+---
+
+---
+**Journal Entry: Voting (Governance)**
+
+* **Project Name:** Voting
+* **Category:** Governance
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** June 28, 2025, 11:00:00 AM UTC (Simulated)
+* **Contract Addresses:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+* **Purpose:** To create a simple voting contract. This contract allows for the creation of proposals and for users to vote on them. This is a basic building block of decentralized governance.
+* **Key Functions Demonstrated:**
+    * `vote`: Allows users to cast their vote for a proposal.
+    * `winningProposal`: Returns the proposal with the most votes.
+* **Associated Components:**
+    * **Frontend (HTML/JS):** N/A for this project.
+    * **Off-chain Script (Python):** N/A for this project.
+* **How it was made:** The contract was written in Solidity. It was deployed using a Hardhat script.
+* **Creative Decisions:** The contract uses a simple "one person, one vote" system. Each address can only vote once. The proposals are passed in as an array of strings to the constructor, making it easy to create new voting contracts for different sets of proposals.
 
 ---
