@@ -1,4 +1,3 @@
-
 ---
 **Journal Entry: Simple ERC-20 Token (Core Token Standard)**
 
@@ -159,5 +158,26 @@
     * **Off-chain Script (Python):** N/A for this project.
 * **How it was made:** The contract was written in Solidity, inheriting from OpenZeppelin's `ERC721` and `Ownable` contracts. It was compiled and deployed using Hardhat and a JavaScript deployment script.
 * **Creative Decisions:** The `safeMint` function is restricted to the owner to control the creation of new NFTs. The token ID is automatically incremented, ensuring uniqueness.
+
+---
+
+---
+**Journal Entry: Multi-Signature Wallet (Security)**
+
+* **Project Name:** Multi-Signature Wallet
+* **Category:** Security
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** June 28, 2025, 11:10:00 AM UTC (Simulated)
+* **Contract Addresses:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+* **Purpose:** To create a multi-signature wallet that requires a minimum number of owners to approve a transaction before it can be executed. This is a common security pattern for managing funds, as it prevents a single point of failure.
+* **Key Functions Demonstrated:**
+    * `submitTransaction`: Allows an owner to submit a new transaction.
+    * `confirmTransaction`: Allows an owner to confirm a transaction.
+    * `executeTransaction`: Executes a transaction once it has been confirmed by the required number of owners.
+* **Associated Components:**
+    * **Frontend (HTML/JS):** N/A for this project.
+    * **Off-chain Script (Python):** N/A for this project.
+* **How it was made:** The contract was written in Solidity. It was deployed using a Hardhat script.
+* **Creative Decisions:** The wallet is initialized with a list of owners and a required number of confirmations. Transactions can be for sending Ether or for calling functions on other contracts. The contract includes events for all major actions, making it easy to track the status of transactions off-chain.
 
 ---
