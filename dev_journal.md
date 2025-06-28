@@ -1,3 +1,4 @@
+
 ---
 **Journal Entry: Simple ERC-20 Token (Core Token Standard)**
 
@@ -179,5 +180,28 @@
     * **Off-chain Script (Python):** N/A for this project.
 * **How it was made:** The contract was written in Solidity. It was deployed using a Hardhat script.
 * **Creative Decisions:** The wallet is initialized with a list of owners and a required number of confirmations. Transactions can be for sending Ether or for calling functions on other contracts. The contract includes events for all major actions, making it easy to track the status of transactions off-chain.
+
+---
+
+---
+**Journal Entry: SimpleDEX (DeFi)**
+
+* **Project Name:** SimpleDEX
+* **Category:** DeFi
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** June 28, 2025, 11:15:00 AM UTC (Simulated)
+* **Contract Addresses:** 
+    * **SimpleDEX:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+    * **Token1:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+    * **Token2:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+* **Purpose:** To create a simple decentralized exchange (DEX) that allows users to swap between two ERC-20 tokens. This demonstrates the basic principles of automated market makers (AMMs).
+* **Key Functions Demonstrated:**
+    * `swap`: Allows users to swap one token for another.
+    * `addLiquidity`: Allows users to add liquidity to the DEX.
+* **Associated Components:**
+    * **Frontend (HTML/JS):** N/A for this project.
+    * **Off-chain Script (Python):** N/A for this project.
+* **How it was made:** The contract was written in Solidity. It was deployed using a Hardhat script that also deployed two new `SimpleToken` contracts to be used with the DEX.
+* **Creative Decisions:** The DEX uses a simple constant product formula (`x * y = k`) to determine the swap price. The contract is intentionally simple and does not include features like liquidity provider tokens or fees.
 
 ---
