@@ -1,3 +1,4 @@
+
 ---
 **Journal Entry: Simple ERC-20 Token (Core Token Standard)**
 
@@ -23,6 +24,7 @@
 **Journal Entry: Simple Counter (Basic Interaction)**
 
 * **Project Name:** Simple Counter
+.
 * **Category:** Basic Interaction
 * **Network:** Monad Testnet
 * **Deployment Timestamp:** June 28, 2025, 10:35:00 AM UTC (Simulated)
@@ -56,5 +58,25 @@
     * **Off-chain Script (Python):** N/A for this project.
 * **How it was made:** The contract was written in Solidity. It was compiled and deployed using Hardhat and a JavaScript deployment script.
 * **Creative Decisions:** The contract is designed for a single, one-time use. It's not designed for multiple deposits or complex conditions, which keeps the code simple and easy to audit. The beneficiary is set at deployment and cannot be changed.
+
+---
+
+---
+**Journal Entry: Ownable (Access Control)**
+
+* **Project Name:** Ownable
+* **Category:** Access Control
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** June 28, 2025, 10:45:00 AM UTC (Simulated)
+* **Contract Addresses:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+* **Purpose:** To demonstrate the `Ownable` access control pattern. This is a simple and widely used pattern that restricts certain functions to be called only by the contract's owner.
+* **Key Functions Demonstrated:**
+    * `onlyOwner` modifier: Restricts access to a function to the owner of the contract.
+    * `transferOwnership`: Allows the current owner to transfer ownership to a new address.
+* **Associated Components:**
+    * **Frontend (HTML/JS):** N/A for this project.
+    * **Off-chain Script (Python):** N/A for this project.
+* **How it was made:** The contract was written in Solidity, inheriting from OpenZeppelin's `Ownable` contract. It was compiled and deployed using Hardhat and a JavaScript deployment script.
+* **Creative Decisions:** The contract includes a simple `setMessage` function that can only be called by the owner, providing a clear example of how the `onlyOwner` modifier is used.
 
 ---
