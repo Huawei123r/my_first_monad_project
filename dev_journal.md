@@ -1,3 +1,4 @@
+
 ---
 **Journal Entry: Simple ERC-20 Token (Core Token Standard)**
 
@@ -97,5 +98,27 @@
     * **Off-chain Script (Python):** N/A for this project.
 * **How it was made:** The contract was written in Solidity. The frontend was built with HTML and JavaScript, using the Ethers.js library to interact with the smart contract. The project was compiled and deployed using Hardhat.
 * **Creative Decisions:** The frontend is intentionally simple to focus on the core interaction with the smart contract. It uses a CDN for Ethers.js to avoid the need for a complex frontend build process. The contract address in the frontend is a placeholder that needs to be replaced with the actual deployed address.
+
+---
+
+---
+**Journal Entry: Faucet (Utility)**
+
+* **Project Name:** Faucet
+* **Category:** Utility
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** June 28, 2025, 10:55:00 AM UTC (Simulated)
+* **Contract Addresses:** 
+    * **Faucet:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+    * **SimpleToken:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+* **Purpose:** To create a simple faucet that dispenses a fixed amount of tokens to users. Faucets are essential for testnets and development environments, allowing users to obtain test tokens to interact with DApps.
+* **Key Functions Demonstrated:**
+    * `requestTokens`: Allows users to request tokens from the faucet.
+    * `setWithdrawalAmount`: Allows the owner to change the amount of tokens dispensed.
+* **Associated Components:**
+    * **Frontend (HTML/JS):** N/A for this project.
+    * **Off-chain Script (Python):** N/A for this project.
+* **How it was made:** The contract was written in Solidity. It was deployed using a Hardhat script that also deployed a new `SimpleToken` to be used with the faucet.
+* **Creative Decisions:** The faucet has a 24-hour cooldown period for each user to prevent abuse. The owner can adjust the withdrawal amount, providing flexibility. The contract can also receive Ether to be used for gas fees when dispensing tokens.
 
 ---
