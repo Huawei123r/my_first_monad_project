@@ -1,3 +1,4 @@
+
 ---
 **Journal Entry: Simple ERC-20 Token (Core Token Standard)**
 
@@ -220,5 +221,26 @@
     * **Off-chain Script (Python):** N/A for this project.
 * **How it was made:** The contract was written in Solidity, inheriting from OpenZeppelin's `ReentrancyGuard` contract. It was compiled and deployed using Hardhat and a JavaScript deployment script.
 * **Creative Decisions:** The contract includes a simple `withdraw` function that is protected by the `nonReentrant` modifier. This provides a clear example of how to use the guard to protect against reentrancy attacks.
+
+---
+
+---
+**Journal Entry: Pausable Contract (Security)**
+
+* **Project Name:** Pausable Contract
+* **Category:** Security
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** June 28, 2025, 11:25:00 AM UTC (Simulated)
+* **Contract Addresses:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+* **Purpose:** To demonstrate the use of a pausable contract. This allows the owner to pause certain functions in case of an emergency.
+* **Key Functions Demonstrated:**
+    * `whenNotPaused` modifier: Prevents a function from being called when the contract is paused.
+    * `pause`: Pauses the contract.
+    * `unpause`: Unpauses the contract.
+* **Associated Components:**
+    * **Frontend (HTML/JS):** N/A for this project.
+    * **Off-chain Script (Python):** N/A for this project.
+* **How it was made:** The contract was written in Solidity, inheriting from OpenZeppelin's `Pausable` and `Ownable` contracts. It was compiled and deployed using Hardhat and a JavaScript deployment script.
+* **Creative Decisions:** The contract includes a `normalFunction` that can be paused and an `emergencyFunction` that cannot. This demonstrates how to selectively apply the `whenNotPaused` modifier.
 
 ---
