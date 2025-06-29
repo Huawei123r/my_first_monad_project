@@ -1,4 +1,3 @@
-
 ---
 **Journal Entry: Simple ERC-20 Token (Core Token Standard)**
 
@@ -24,7 +23,6 @@
 **Journal Entry: Simple Counter (Basic Interaction)**
 
 * **Project Name:** Simple Counter
-.
 * **Category:** Basic Interaction
 * **Network:** Monad Testnet
 * **Deployment Timestamp:** June 28, 2025, 10:35:00 AM UTC (Simulated)
@@ -203,5 +201,24 @@
     * **Off-chain Script (Python):** N/A for this project.
 * **How it was made:** The contract was written in Solidity. It was deployed using a Hardhat script that also deployed two new `SimpleToken` contracts to be used with the DEX.
 * **Creative Decisions:** The DEX uses a simple constant product formula (`x * y = k`) to determine the swap price. The contract is intentionally simple and does not include features like liquidity provider tokens or fees.
+
+---
+
+---
+**Journal Entry: Reentrancy Guard (Security)**
+
+* **Project Name:** Reentrancy Guard
+* **Category:** Security
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** June 28, 2025, 11:20:00 AM UTC (Simulated)
+* **Contract Addresses:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+* **Purpose:** To demonstrate the use of a reentrancy guard to prevent reentrancy attacks. This is a critical security measure for any contract that interacts with external contracts.
+* **Key Functions Demonstrated:**
+    * `nonReentrant` modifier: Prevents a function from being called again while it is still executing.
+* **Associated Components:**
+    * **Frontend (HTML/JS):** N/A for this project.
+    * **Off-chain Script (Python):** N/A for this project.
+* **How it was made:** The contract was written in Solidity, inheriting from OpenZeppelin's `ReentrancyGuard` contract. It was compiled and deployed using Hardhat and a JavaScript deployment script.
+* **Creative Decisions:** The contract includes a simple `withdraw` function that is protected by the `nonReentrant` modifier. This provides a clear example of how to use the guard to protect against reentrancy attacks.
 
 ---
