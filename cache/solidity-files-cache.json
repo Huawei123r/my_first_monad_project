@@ -699,8 +699,8 @@
       ]
     },
     "/home/administrator/gemini/my_first_monad_project/contracts/MyFirstToken.sol": {
-      "lastModificationDate": 1751141485583,
-      "contentHash": "cbb000ab5d9224325c9b303232cfe897",
+      "lastModificationDate": 1751198574707,
+      "contentHash": "c136c839b8898f485b7bf72b5a85542b",
       "sourceName": "contracts/MyFirstToken.sol",
       "solcConfig": {
         "version": "0.8.20",
