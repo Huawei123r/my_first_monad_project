@@ -1,4 +1,3 @@
-
 ---
 **Journal Entry: Simple ERC-20 Token (Core Token Standard)**
 
@@ -242,5 +241,27 @@
     * **Off-chain Script (Python):** N/A for this project.
 * **How it was made:** The contract was written in Solidity, inheriting from OpenZeppelin's `Pausable` and `Ownable` contracts. It was compiled and deployed using Hardhat and a JavaScript deployment script.
 * **Creative Decisions:** The contract includes a `normalFunction` that can be paused and an `emergencyFunction` that cannot. This demonstrates how to selectively apply the `whenNotPaused` modifier.
+
+---
+
+---
+**Journal Entry: Upgradeable Contract (UUPS)**
+
+* **Project Name:** Upgradeable Contract (UUPS)
+* **Category:** Advanced Patterns
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** June 28, 2025, 11:30:00 AM UTC (Simulated)
+* **Contract Addresses:** 
+    * **Proxy:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+    * **BoxV1:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+    * **BoxV2:** 0x5FbDB2315678afecb367f032d93F642f64180aa3 (Simulated Deployment Address)
+* **Purpose:** To demonstrate the UUPS (Universal Upgradeable Proxy Standard) pattern for upgradeable smart contracts. This allows the logic of a contract to be changed without changing the contract's address.
+* **Key Functions Demonstrated:**
+    * `upgradeProxy`: Upgrades the implementation of the proxy contract to a new version.
+* **Associated Components:**
+    * **Frontend (HTML/JS):** N/A for this project.
+    * **Off-chain Script (Python):** N/A for this project.
+* **How it was made:** The contracts were written in Solidity, using OpenZeppelin's upgradeable contracts library. The deployment and upgrade were handled by Hardhat's upgrades plugin.
+* **Creative Decisions:** The project includes two versions of the `Box` contract. `BoxV2` adds an `increment` function, demonstrating how new functionality can be added to an existing contract. The `_authorizeUpgrade` function is restricted to the owner, ensuring that only the owner can upgrade the contract.
 
 ---
