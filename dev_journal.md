@@ -1,20 +1,23 @@
 ---
-**Journal Entry: MyFirstNFT (Core Token Standard)**
+**Journal Entry: MyFirstToken (Core Token Standard)**
 
-* **Project Name:** MyFirstNFT
+* **Project Name:** MyFirstToken
 * **Category:** Core Token Standard
 * **Network:** Monad Testnet
-* **Deployment Timestamp:** June 29, 2025, 03:00:00 PM UTC
-* **Contract Addresses:** 0x931911536239a641d04bc4C4cc5D589EC26304B6
+* **Deployment Timestamp:** June 29, 2025, 03:05:00 PM UTC
+* **Contract Addresses:** 0x9Eb4d5A6eD8199751c730Bd653CC3C21760C152b
 * **Verification Status:** Verification Failed (The deployed and recompiled bytecode don't match, and error decoding response body from Sourcify API.)
-* **Purpose:** This project demonstrates the deployment and basic interaction with an ERC-721 compliant Non-Fungible Token (NFT) contract. It showcases how to create a unique digital asset on the Monad Testnet, with ownership managed by the contract deployer.
+* **Purpose:** This project demonstrates the deployment and basic interaction with an ERC-20 compliant Fungible Token contract. It showcases how to create a transferable digital currency on the Monad Testnet, with initial supply minted to the deployer and a function for the owner to mint additional tokens.
 * **Key Functions Demonstrated:**
-    * `constructor()`: Initializes the ERC-721 contract with a name ("MyFirstNFT") and symbol ("MFN").
-    * `safeMint(address to)`: Allows the contract owner to mint a new NFT and assign it to a specified recipient address. It uses OpenZeppelin's `Counters` library to manage unique token IDs.
+    * `constructor(uint256 initialSupply)`: Initializes the ERC-20 contract with a name ("MyFirstToken") and symbol ("MFT"), and mints the `initialSupply` to the deployer.
+    * `mint(address to, uint256 amount)`: Allows the contract owner to mint new tokens and assign them to a specified recipient address.
+    * `transfer(address to, uint256 amount)`: Standard ERC-20 function allowing token holders to transfer tokens to another address.
+    * `balanceOf(address account)`: Standard ERC-20 function to query the balance of a given address.
+    * `totalSupply()`: Standard ERC-20 function to query the total supply of tokens.
 * **Associated Components:**
-    * **Frontend (HTML/JS):** A simple HTML page (`index.html`) that allows users to connect their MetaMask wallet, view the NFT contract's name and symbol, and mint new NFTs by providing a recipient address. It uses Ethers.js for Web3 interaction.
-    * **Off-chain Script (Python):** A Python script (`mint_nft.py`) using `web3.py` to programmatically connect to the Monad Testnet, retrieve contract details (name, symbol), and mint an NFT to a specified address. This demonstrates off-chain interaction with the deployed smart contract.
-* **How it was made:** The smart contract (`MyFirstNFT.sol`) was written in Solidity, inheriting from OpenZeppelin's `ERC721` and `Ownable` contracts for standard compliance and access control. It was compiled and deployed to the Monad Testnet using Hardhat. The deployment script (`scripts/deploy_nft.js`) was modified to correctly deploy the contract. Foundry's `forge verify-contract` was used to attempt verification on Sourcify, though it encountered issues. A basic HTML/JavaScript frontend (`index.html`) was created to provide a user interface for interaction, and a Python script (`mint_nft.py`) was developed for off-chain programmatic interaction.
-* **Creative Decisions:** The project was kept simple to focus on the core concepts of ERC-721 NFT creation and basic interaction. The `safeMint` function was restricted to `onlyOwner` to illustrate a common access control pattern for initial NFT minting. The frontend and off-chain script were designed to be minimal but functional, demonstrating how to connect to the blockchain, read contract data, and send transactions. The use of OpenZeppelin contracts ensures adherence to best practices and security standards.
+    * **Frontend (HTML/JS):** A simple HTML page (`index_token.html`) that allows users to connect their MetaMask wallet, view the token contract's name, symbol, total supply, and their own balance. It also provides interfaces to mint new tokens (owner only) and transfer tokens to other addresses. It uses Ethers.js for Web3 interaction.
+    * **Off-chain Script (Python):** A Python script (`interact_token.py`) using `web3.py` to programmatically connect to the Monad Testnet, retrieve contract details (name, symbol, total supply), check the owner's balance, mint new tokens, and transfer tokens. This demonstrates comprehensive off-chain interaction with the deployed ERC-20 smart contract.
+* **How it was made:** The smart contract (`MyFirstToken.sol`) was written in Solidity, inheriting from OpenZeppelin's `ERC20` and `Ownable` contracts for standard compliance and access control. It was compiled and deployed to the Monad Testnet using Hardhat. The deployment script (`scripts/deploy_token.js`) handles the initial supply. Foundry's `forge verify-contract` was used to attempt verification on Sourcify, encountering similar issues as the previous project. A basic HTML/JavaScript frontend (`index_token.html`) was created for user interaction, and a Python script (`interact_token.py`) was developed for off-chain programmatic interaction.
+* **Creative Decisions:** This project expands on the basic token concept by adding a `mint` function for the owner, demonstrating a common pattern for managing token supply. The frontend provides both minting and transferring functionalities, offering a more complete user experience for an ERC-20 token. The Python script covers reading various token properties and executing both minting and transfer transactions, showcasing a broader range of off-chain interactions.
 
 ---
