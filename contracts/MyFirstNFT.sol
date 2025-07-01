@@ -9,7 +9,7 @@ contract MyFirstNFT is ERC721, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
 
-    constructor() ERC721("MyFirstNFT", "MFN") {}
+    constructor() ERC721("MyFirstNFT", "MNFT") Ownable() {}
 
     function safeMint(address to) public onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
