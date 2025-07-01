@@ -99,6 +99,25 @@ contract MultiSigWallet {
         }
     }
 
+    function getOwners()
+        public
+        view
+        returns (address[] memory)
+    {
+        return owners;
+    }
+
+    function getConfirmationCount(uint transactionId)
+        public
+        view
+        returns (uint count)
+    {
+        for (uint i = 0; i < owners.length; i++) {
+            if (confirmations[transactionId][owners[i]])
+                count += 1;
+        }
+    }
+
     function isConfirmed(uint transactionId)
         public
         view

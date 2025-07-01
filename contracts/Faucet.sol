@@ -26,6 +26,21 @@ contract Faucet {
         withdrawalAmount = newAmount;
     }
 
+    function transferOwnership(address newOwner) public {
+        require(msg.sender == owner, "Only the owner can transfer ownership.");
+        owner = newOwner;
+    }
+
+    function withdrawTokens() public {
+        require(msg.sender == owner, "Only the owner can withdraw the remaining tokens.");
+        token.transfer(owner, token.balanceOf(address(this)));
+    }
+
+    function withdrawEther() public {
+        require(msg.sender == owner, "Only the owner can withdraw ether.");
+        payable(owner).transfer(address(this).balance);
+    }
+
     receive() external payable {
         // Allow the contract to receive Ether to fund the faucet
     }
