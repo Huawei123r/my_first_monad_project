@@ -19,6 +19,8 @@ def escape_markdown_v2(text):
 
 DEPLOY_TIMESTAMP = datetime.now().strftime("%B %d, %Y at %I:%M:%S %p")
 
+GITHUB_REPO_URL = os.environ.get('GITHUB_REPO_URL', 'https://github.com/Huawei123r/my_first_monad_project')
+
 JOURNAL_ENTRY_RAW = f"""---
 **Journal Entry: MyFirstToken (Core Token Standard)**
 
@@ -26,7 +28,7 @@ JOURNAL_ENTRY_RAW = f"""---
 * **Category:** Core Token Standard
 * **Network:** Monad Testnet
 * **Deployment Timestamp:** {DEPLOY_TIMESTAMP}
-* **GitHub Repository URL:** https://github.com/orgs/community/discussions/22534
+* **GitHub Repository URL:** {GITHUB_REPO_URL}
 * **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0x46E4cb3B7763a5819B94F18FB1B14fb9B5208790
 * **Key Files Created:**
     * `contracts/MyFirstToken.sol`
