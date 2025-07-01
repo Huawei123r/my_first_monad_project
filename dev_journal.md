@@ -1,4 +1,25 @@
 ---
+**Journal Entry: Multi-Sig Wallet (Governance)**
+
+* **Project Name:** Multi-Sig Wallet
+* **Category:** Governance
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 01, 2025, 11:52:00 AM UTC
+* **GitHub Repository URL:** https://github.com/orgs/community/discussions/22534
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0x3EA0598cc4fB26aECD93f31F26416DB7C0DCd10a
+* **Key Files Created:**
+    * `contracts/MultiSigWallet.sol`
+    * `scripts/deploy_multi_sig_wallet.js`
+* **Project Summary:** This project implements a multi-signature wallet that allows a group of owners to manage a shared wallet. It requires a certain number of owners to confirm a transaction before it can be executed.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Hardhat, Foundry
+    * Key Libraries: None
+    * Interaction Instructions: Use Hardhat tasks to interact with the contract.
+* **Verification Status:** Verification Failed (Blockscout verifier returned an HTML page instead of a JSON response).
+* **Verification Command (if applicable):** `/home/administrator/.foundry/bin/forge verify-contract --chain 10143 --verifier blockscout --verifier-url https://testnet.monadexplorer.com/api --compiler-version 0.8.20 0x3EA0598cc4fB26aECD93f31F26416DB7C0DCd10a contracts/MultiSigWallet.sol:MultiSigWallet --rpc-url https://testnet-rpc.monad.xyz/`
+---
+---
 **Journal Entry: Escrow (DeFi)**
 
 * **Project Name:** Escrow
@@ -67,3 +88,61 @@
 * **Verification Status:** Verification Failed (Sourcify and Blockscout verifiers returned errors).
 * **Verification Command (if applicable):** `/home/administrator/.foundry/bin/forge verify-contract --chain 10143 --verifier blockscout --verifier-url https://testnet.monadexplorer.com/api --compiler-version 0.8.20 0x535A7B41b15Aea6fa21c89Dd80C0035Acf5a9c06 contracts/Counter.sol:Counter --rpc-url https://testnet-rpc.monad.xyz/`
 ---
+---
+**Journal Entry: Counter Contract (Basic Utility)**
+
+* **Project Name:** Counter Contract
+* **Category:** Basic Utility
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 01, 2025 at 01:12:02 PM
+* **GitHub Repository URL:** https://github.com/orgs/community/discussions/22534
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0x299Cca24361b9a5437494c34622F5BB65312CdD1
+* **Key Files Created:**
+    * 
+    * 
+* **Project Summary:** A simple smart contract that allows users to increment and decrement a numerical counter. This demonstrates basic contract deployment and state management on the Monad Testnet.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a  file.
+        3. To read the current counter value:
+           
+        4. To increment the counter (requires gas):
+           
+        5. To decrement the counter (requires gas):
+           
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** 
+---
+---
+**Journal Entry: Counter Contract (Basic Utility)**
+
+* **Project Name:** Counter Contract
+* **Category:** Basic Utility
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 01, 2025 at 01:12:11 PM
+* **GitHub Repository URL:** https://github.com/orgs/community/discussions/22534
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0x299Cca24361b9a5437494c34622F5BB65312CdD1
+* **Key Files Created:**
+    * 
+    * 
+* **Project Summary:** A simple smart contract that allows users to increment and decrement a numerical counter. This demonstrates basic contract deployment and state management on the Monad Testnet.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a  file.
+        3. To read the current counter value:
+           
+        4. To increment the counter (requires gas):
+           
+        5. To decrement the counter (requires gas):
+           
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** 
+------\n**Journal Entry: Counter Contract (Basic Utility)**\n\n* **Project Name:** Counter Contract\n* **Category:** Basic Utility\n* **Network:** Monad Testnet\n* **Deployment Timestamp:** July 01, 2025 at 01:13:19 PM\n* **GitHub Repository URL:** https://github.com/orgs/community/discussions/22534\n* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0x299Cca24361b9a5437494c34622F5BB65312CdD1\n* **Key Files Created:**\n    * \n    * \n* **Project Summary:** A simple smart contract that allows users to increment and decrement a numerical counter. This demonstrates basic contract deployment and state management on the Monad Testnet.\n* **Technical Details:**\n    * Solidity Version: 0.8.20\n    * Framework Used: Foundry\n    * Key Libraries: forge-std\n    * Interaction Instructions:\n        1. Ensure you have Foundry installed and configured.\n        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a  file.\n        3. To read the current counter value:\n           \n        4. To increment the counter (requires gas):\n           \n        5. To decrement the counter (requires gas):\n           \n* **Verification Status:** Verified\n* **Verification Command (if applicable):** \n---

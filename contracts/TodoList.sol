@@ -9,6 +9,14 @@ contract TodoList {
 
     Todo[] public todos;
 
+    function getTodo(uint _index) public view returns (string memory, bool) {
+        return (todos[_index].text, todos[_index].completed);
+    }
+
+    function getTodoCount() public view returns (uint) {
+        return todos.length;
+    }
+
     function create(string memory _text) public {
         todos.push(Todo({
             text: _text,
