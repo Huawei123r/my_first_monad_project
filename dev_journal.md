@@ -25,3 +25,32 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `forge script scripts/DeployMyERC1155Token.s.sol --rpc-url https://testnet-rpc.monad.xyz --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --chain-id 10143 --contracts contracts/MyERC1155Token.sol -vvvv`
 ---
+---
+**Journal Entry: TimeLock (Basic Utility)**
+
+* **Project Name:** TimeLock
+* **Category:** Basic Utility
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 02, 2025 at 11:40:00 AM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0x7e87758eC535318E7730fc7994A99Bd5c28Dc63d
+* **Key Files Created:**
+    * `contracts/TimeLock.sol`
+    * `scripts/DeployTimeLock.s.sol`
+* **Project Summary:** This project implements a time-locked wallet that allows users to deposit ETH or ERC-20 tokens, which can only be withdrawn after a specified unlock time. The owner can set the unlock time for any user.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To deposit ETH:
+           `cast send 0x7e87758eC535318E7730fc7994A99Bd5c28Dc63d "deposit()" --value 1ether --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. To withdraw ETH (after lock time):
+           `cast send 0x7e87758eC535318E7730fc7994A99Bd5c28Dc63d "withdraw()" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        5. To set a new lock time for a user (only by owner):
+           `cast send 0x7e87758eC535318E7730fc7994A99Bd5c28Dc63d "setLockTime(address,uint256)" USER_ADDRESS NEW_LOCK_TIMESTAMP --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `forge script scripts/DeployTimeLock.s.sol --rpc-url https://testnet-rpc.monad.xyz --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --chain-id 10143 --contracts contracts/TimeLock.sol -vvvv`
+---
