@@ -190,3 +190,94 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `forge script scripts/DeployLendingBorrowing.s.sol --rpc-url https://testnet-rpc.monad.xyz --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --chain-id 10143 --contracts contracts/LendingBorrowing.sol -vvvv`
 ---
+---
+**Journal Entry: SimpleOracle (Data Feeds / External Data)**
+
+* **Project Name:** SimpleOracle
+* **Category:** Data Feeds / External Data
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 02, 2025 at 12:30:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0xd55901f12CFB326Eaf669674989E59c8a34f422d
+* **Key Files Created:**
+    * `contracts/SimpleOracle.sol`
+    * `scripts/DeploySimpleOracle.s.sol`
+* **Project Summary:** This project implements a basic oracle contract that allows the owner to update a price feed. Other contracts or users can then query this oracle to get the latest price and its timestamp.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To update the price (only by owner):
+           `cast send 0xd55901f12CFB326Eaf669674989E59c8a34f422d "updatePrice(uint256)" NEW_PRICE --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. To get the latest price:
+           `cast call 0xd55901f12CFB326Eaf669674989E59c8a34f422d "getLatestPrice()(uint256)" --rpc-url https://testnet-rpc.monad.xyz`
+        5. To get the last updated timestamp:
+           `cast call 0xd55901f12CFB326Eaf669674989E59c8a34f422d "getLastUpdatedTimestamp()(uint256)" --rpc-url https://testnet-rpc.monad.xyz`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `forge script scripts/DeploySimpleOracle.s.sol --rpc-url https://testnet-rpc.monad.xyz --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --chain-id 10143 --contracts contracts/SimpleOracle.sol -vvvv`
+---
+---
+**Journal Entry: EventLogger (Off-Chain Data / Indexing Focus)**
+
+* **Project Name:** EventLogger
+* **Category:** Off-Chain Data / Indexing Focus
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 02, 2025 at 12:40:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0x33a0C57661B85A7f2A7FD7a7B76B1855Ff779987
+* **Key Files Created:**
+    * `contracts/EventLogger.sol`
+    * `scripts/DeployEventLogger.s.sol`
+* **Project Summary:** This project implements a simple contract for logging events on the blockchain. It provides functions to emit string messages and numerical values, which can be used for off-chain data indexing and monitoring.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To log a message:
+           `cast send 0x33a0C57661B85A7f2A7FD7a7B76B1855Ff779987 "logMessage(string)" "Hello Monad!" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. To log a value:
+           `cast send 0x33a0C57661B85A7f2A7FD7a7B76B1855Ff779987 "logValue(uint256)" 12345 --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `forge script scripts/DeployEventLogger.s.sol --rpc-url https://testnet-rpc.monad.xyz --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --chain-id 10143 --contracts contracts/EventLogger.sol -vvvv`
+---
+---
+**Journal Entry: NFTMarketplace (Marketplace Concepts)**
+
+* **Project Name:** NFTMarketplace
+* **Category:** Marketplace Concepts
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 02, 2025 at 12:50:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** 
+    * NFTMarketplace: https://testnet.monadexplorer.com/address/0x1b502E81d29bAE6569601d633cFE3e5e8A5cfA9f
+    * MyFirstNFT (Sample NFT): https://testnet.monadexplorer.com/address/0xAF2CE201f1a851D11423E74A53BDcCaC6E23CF71
+* **Key Files Created:**
+    * `contracts/NFTMarketplace.sol`
+    * `scripts/DeployNFTMarketplace.s.sol`
+* **Project Summary:** This project implements a basic NFT marketplace where users can list their ERC-721 NFTs for sale and other users can purchase them with ETH. It includes functions for listing, buying, and unlisting NFTs.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (IERC721, Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. Mint an NFT (if you don't have one):
+           `cast send MY_FIRST_NFT_CONTRACT_ADDRESS "mint(address)" YOUR_ADDRESS --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. Approve the marketplace to transfer your NFT:
+           `cast send MY_FIRST_NFT_CONTRACT_ADDRESS "approve(address,uint256)" NFT_MARKETPLACE_CONTRACT_ADDRESS TOKEN_ID --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        5. To list an NFT for sale:
+           `cast send 0x1b502E81d29bAE6569601d633cFE3e5e8A5cfA9f "listNFT(address,uint256,uint256)" MY_FIRST_NFT_CONTRACT_ADDRESS TOKEN_ID PRICE_IN_WEI --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        6. To buy an NFT:
+           `cast send 0x1b502E81d29bAE6569601d633cFE3e5e8A5cfA9f "buyNFT(address,uint256)" MY_FIRST_NFT_CONTRACT_ADDRESS TOKEN_ID --value PRICE_IN_WEI --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        7. To unlist an NFT:
+           `cast send 0x1b502E81d29bAE6569601d633cFE3e5e8A5cfA9f "unlistNFT(address,uint256)" MY_FIRST_NFT_CONTRACT_ADDRESS TOKEN_ID --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `forge script scripts/DeployNFTMarketplace.s.sol --rpc-url https://testnet-rpc.monad.xyz --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --chain-id 10143 --contracts contracts/NFTMarketplace.sol -vvvv`
+---
