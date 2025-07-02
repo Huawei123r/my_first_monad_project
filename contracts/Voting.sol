@@ -1,39 +1,45 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-contract Voting {
+import "@openzeppelin/contracts/access/Ownable.sol";
+
+contract Voting is Ownable {
     struct Proposal {
+        uint256 id;
         string name;
-        uint voteCount;
+        uint256 voteCount;
+        bool exists;
     }
 
-    Proposal[] public proposals;
+    uint256 public nextProposalId;
+    mapping(uint256 => Proposal) public proposals;
     mapping(address => bool) public hasVoted;
 
-    constructor(string[] memory proposalNames) {
-        for (uint i = 0; i < proposalNames.length; i++) {
-            proposals.push(Proposal({
-                name: proposalNames[i],
-                voteCount: 0
-            }));
-        }
+    event ProposalCreated(uint256 indexed id, string name);
+    event Voted(address indexed voter, uint256 indexed proposalId);
+
+    constructor() Ownable() {
+        nextProposalId = 0;
     }
 
-    function vote(uint proposalIndex) public {
-        require(!hasVoted[msg.sender], "You have already voted.");
-        require(proposalIndex < proposals.length, "Invalid proposal.");
+    function createProposal(string memory _name) public onlyOwner {
+        proposals[nextProposalId] = Proposal(nextProposalId, _name, 0, true);
+        emit ProposalCreated(nextProposalId, _name);
+        nextProposalId++;
+    }
 
-        proposals[proposalIndex].voteCount++;
+    function vote(uint256 _proposalId) public {
+        require(proposals[_proposalId].exists, "Proposal does not exist");
+        require(!hasVoted[msg.sender], "Already voted");
+
+        proposals[_proposalId].voteCount++;
         hasVoted[msg.sender] = true;
+        emit Voted(msg.sender, _proposalId);
     }
 
-    function winningProposal() public view returns (uint winningProposal_) {
-        uint winningVoteCount = 0;
-        for (uint p = 0; p < proposals.length; p++) {
-            if (proposals[p].voteCount > winningVoteCount) {
-                winningVoteCount = proposals[p].voteCount;
-                winningProposal_ = p;
-            }
-        }
+    function getProposal(uint256 _proposalId) public view returns (uint256 id, string memory name, uint256 voteCount) {
+        require(proposals[_proposalId].exists, "Proposal does not exist");
+        Proposal storage p = proposals[_proposalId];
+        return (p.id, p.name, p.voteCount);
     }
 }

@@ -54,3 +54,32 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `forge script scripts/DeployTimeLock.s.sol --rpc-url https://testnet-rpc.monad.xyz --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --chain-id 10143 --contracts contracts/TimeLock.sol -vvvv`
 ---
+---
+**Journal Entry: Voting (Governance)**
+
+* **Project Name:** Voting
+* **Category:** Governance
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 02, 2025 at 11:50:00 AM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0x3BCc94206A67D057Fd9ad66dCC928B795e58ed25
+* **Key Files Created:**
+    * `contracts/Voting.sol`
+    * `scripts/DeployVoting.s.sol`
+* **Project Summary:** This project implements a basic decentralized voting contract. The owner can create proposals, and users can vote on them. Each user can vote only once.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To create a proposal (only by owner):
+           `cast send 0x3BCc94206A67D057Fd9ad66dCC928B795e58ed25 "createProposal(string)" "My First Proposal" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. To vote on a proposal:
+           `cast send 0x3BCc94206A67D057Fd9ad66dCC928B795e58ed25 "vote(uint256)" PROPOSAL_ID --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        5. To get proposal details:
+           `cast call 0x3BCc94206A67D057Fd9ad66dCC928B795e58ed25 "getProposal(uint256)(uint256,string,uint256)" PROPOSAL_ID --rpc-url https://testnet-rpc.monad.xyz`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `forge script scripts/DeployVoting.s.sol --rpc-url https://testnet-rpc.monad.xyz --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --chain-id 10143 --contracts contracts/Voting.sol -vvvv`
+---
