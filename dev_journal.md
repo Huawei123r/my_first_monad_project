@@ -153,3 +153,40 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `forge script scripts/DeployStakingRewards.s.sol --rpc-url https://testnet-rpc.monad.xyz --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --chain-id 10143 --contracts contracts/StakingRewards.sol -vvvv`
 ---
+---
+**Journal Entry: LendingBorrowing (Basic DeFi Protocol)**
+
+* **Project Name:** LendingBorrowing
+* **Category:** Basic DeFi Protocol
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 02, 2025 at 12:20:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** 
+    * LendingBorrowing: https://testnet.monadexplorer.com/address/0xbD9fE258DCa1f1f0d3005B776B46E20Bf3FE7F53
+    * MyFirstToken (Collateral Token): https://testnet.monadexplorer.com/address/0xA2808A2acc8948F8bC36BD3DAbE32d6c7Db4f004
+    * SecondToken (Borrow Token): https://testnet.monadexplorer.com/address/0x59568a2Fe0A412eC8Aaf29545b79d62020504d1A
+* **Key Files Created:**
+    * `contracts/LendingBorrowing.sol`
+    * `scripts/DeployLendingBorrowing.s.sol`
+* **Project Summary:** This project implements a basic lending and borrowing protocol. Users can deposit collateral (MyFirstToken) and borrow another token (SecondToken) against it. The contract includes functions for depositing/withdrawing collateral, borrowing/repaying tokens, and liquidation for undercollateralized loans.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (IERC20, Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. Approve the LendingBorrowing contract to spend your collateral tokens:
+           `cast send COLLATERAL_TOKEN_ADDRESS "approve(address,uint256)" LENDING_BORROWING_CONTRACT_ADDRESS AMOUNT --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. To deposit collateral:
+           `cast send 0xbD9fE258DCa1f1f0d3005B776B46E20Bf3FE7F53 "depositCollateral(uint256)" AMOUNT --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        5. To borrow tokens:
+           `cast send 0xbD9fE258DCa1f1f0d3005B776B46E20Bf3FE7F53 "borrow(uint256)" AMOUNT --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        6. To repay tokens:
+           `cast send BORROW_TOKEN_ADDRESS "approve(address,uint256)" LENDING_BORROWING_CONTRACT_ADDRESS AMOUNT --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+           `cast send 0xbD9fE258DCa1f1f0d3005B776B46E20Bf3FE7F53 "repay(uint256)" AMOUNT --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        7. To liquidate a loan:
+           `cast send 0xbD9fE258DCa1f1f0d3005B776B46E20Bf3FE7F53 "liquidate(address)" BORROWER_ADDRESS --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `forge script scripts/DeployLendingBorrowing.s.sol --rpc-url https://testnet-rpc.monad.xyz --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --chain-id 10143 --contracts contracts/LendingBorrowing.sol -vvvv`
+---
