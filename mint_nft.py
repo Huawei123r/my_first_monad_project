@@ -3,8 +3,8 @@ import json
 
 # Configuration
 RPC_URL = "https://testnet-rpc.monad.xyz/"
-CONTRACT_ADDRESS = "0x931911536239a641d04bc4C4cc5D589EC26304B6" # Replace with your deployed contract address
-PRIVATE_KEY = "0x75e877ba5d5b6c665dab973b7d1278bd5c530dd36ba80eac23ca37fd5fcbdcfb" # Your private key
+CONTRACT_ADDRESS = "YOUR_DEPLOYED_NFT_CONTRACT_ADDRESS" # Replace with your deployed contract address
+PRIVATE_KEY = "YOUR_PRIVATE_KEY" # Your private key
 
 # Load contract ABI
 # You would typically load this from a compiled JSON file (e.g., artifacts/contracts/MyFirstNFT.sol/MyFirstNFT.json)
@@ -77,6 +77,8 @@ def main():
 
     # Mint an NFT (requires owner's private key)
     try:
+        # NOTE: For actual interaction, replace PRIVATE_KEY with an environment variable or secure input.
+        # This is for demonstration purposes only.
         account = w3.eth.account.from_private_key(PRIVATE_KEY)
         print(f"Minting from address: {account.address}")
 

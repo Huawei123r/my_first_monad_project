@@ -1,6 +1,6 @@
 # My First Monad Project Portfolio
 
-Welcome to my Monad Project Portfolio! This repository showcases a collection of decentralized applications and smart contracts deployed or attempted to be deployed on the Monad Testnet. Each project demonstrates different aspects of Web3 development, from core token standards to DeFi primitives and security patterns.
+Welcome to the Monad Project Portfolio! This repository showcases a collection of decentralized applications and smart contracts deployed on the Monad Testnet. Each project demonstrates different aspects of Web3 development, from core token standards to DeFi primitives and security patterns.
 
 ## Projects Overview
 
@@ -37,24 +37,28 @@ Here's a summary of the projects included in this portfolio:
 *   **Status:** Verified
 
 ### MyFirstNFT (Core Token Standard)
-*   **Project Summary:** This project attempts to deploy a basic ERC-721 NFT contract named 'MyFirstNFT' with the symbol 'MNFT'. It includes a safe minting function accessible only by the contract owner.
-*   **Status:** Deployment Failed (Insufficient Balance)
+*   **Project Summary:** This project deploys a basic ERC-721 NFT contract named 'MyFirstNFT' with the symbol 'MNFT'. It includes a safe minting function accessible only by the contract owner.
+*   **Deployed Address:** [0xf8b5d80c2dBebCD3c59Ce62FB5515D97e7412E8a](https://testnet.monadexplorer.com/address/0xf8b5d80c2dBebCD3c59Ce62FB5515D97e7412E8a)
 *   **Key Files:** [`contracts/MyFirstNFT.sol`](./contracts/MyFirstNFT.sol), [`scripts/DeployMyFirstNFT.s.sol`](./scripts/DeployMyFirstNFT.s.sol)
+*   **Status:** Verified
 
 ### Time-Locked Wallet (Basic Utility)
 *   **Project Summary:** This project implements a time-locked wallet that allows users to deposit ETH or ERC-20 tokens, which can only be withdrawn after a specified unlock time. The owner can set the unlock time for any user.
-*   **Status:** Deployment Failed (Insufficient Balance)
+*   **Deployed Address:** [0xa226E8D4F997ce60e22300455405a0a54c93D91D](https://testnet.monadexplorer.com/address/0xa226E8D4F997ce60e22300455405a0a54c93D91D)
 *   **Key Files:** [`contracts/TimeLockedWallet.sol`](./contracts/TimeLockedWallet.sol), [`scripts/DeployTimeLockedWallet.s.sol`](./scripts/DeployTimeLockedWallet.s.sol)
+*   **Status:** Verified
 
 ### Reentrancy Guard (Security Pattern)
 *   **Project Summary:** This project implements a contract with a reentrancy guard, a security pattern to prevent reentrancy attacks. It includes basic deposit and withdraw functions protected by the `nonReentrant` modifier.
-*   **Status:** Deployment Failed (Insufficient Balance)
+*   **Deployed Address:** [0xa502Fe7A4f5B0f9e369Ad3260d6808Cec9a507DC](https://testnet.monadexplorer.com/address/0xa502Fe7A4f5B0f9e369Ad3260d6808Cec9a507DC)
 *   **Key Files:** [`contracts/ReentrancyGuard.sol`](./contracts/ReentrancyGuard.sol), [`scripts/DeployReentrancyGuard.s.sol`](./scripts/DeployReentrancyGuard.s.sol)
+*   **Status:** Verified
 
 ### TodoList (Simple Decentralized Application)
 *   **Project Summary:** This project implements a simple decentralized to-do list application on the blockchain. Users can add, mark as complete, and delete tasks.
-*   **Status:** Deployment Failed (Insufficient Balance)
+*   **Deployed Address:** [0xdf07ea1f7f4b042584475235A829afc2b43485E7](https://testnet.monadexplorer.com/address/0xdf07ea1f7f4b042584475235A829afc2b43485E7)
 *   **Key Files:** [`contracts/TodoList.sol`](./contracts/TodoList.sol), [`scripts/DeployTodoList.s.sol`](./scripts/DeployTodoList.s.sol)
+*   **Status:** Verified
 
 ## Getting Started
 
