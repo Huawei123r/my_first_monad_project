@@ -90,6 +90,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/Faucet.sol`](./contracts/Faucet.sol), [`scripts/DeployFaucet.s.sol`](./scripts/DeployFaucet.s.sol)
 *   **Status:** Verified
 
+### LendingBorrowing 2 (Basic DeFi Protocol)
+*   **Project Summary:** This project implements a basic lending and borrowing protocol. Users can deposit collateral (MyFirstToken) and borrow another token (SecondToken) against it.
+*   **Deployed Address:** [0xeF8b8AdB1BBBc07a24ef6A026c6caa7f28b5A8f3](https://testnet.monadexplorer.com/address/0xeF8b8AdB1BBBc07a24ef6A026c6caa7f28b5A8f3)
+*   **Key Files:** [`contracts/LendingBorrowing.sol`](./contracts/LendingBorrowing.sol), [`scripts/DeployLendingBorrowing2.s.sol`](./scripts/DeployLendingBorrowing2.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:
