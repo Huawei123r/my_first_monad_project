@@ -369,3 +369,30 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `source .env && forge script scripts/DeployCrowdsale2.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
 ---
+---
+**Journal Entry: Escrow (Basic Utility)**
+
+* **Project Name:** Escrow
+* **Category:** Basic Utility
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 04, 2025 at 04:30:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0x5CCA4e566b5830c0AB017B21389E877CC8DF7150
+* **Key Files Created:**
+    * `contracts/Escrow.sol`
+    * `scripts/DeployEscrow.s.sol`
+* **Project Summary:** This project deploys an Escrow contract that holds funds for a beneficiary. The funds can be released to the beneficiary at any time, or reclaimed by the depositor after a deadline has passed.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: N/A
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To release funds to the beneficiary:
+           `cast send 0x5CCA4e566b5830c0AB017B21389E877CC8DF7150 "release()" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. To reclaim funds after the deadline (only by depositor):
+           `cast send 0x5CCA4e566b5830c0AB017B21389E877CC8DF7150 "reclaim()" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeployEscrow.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---

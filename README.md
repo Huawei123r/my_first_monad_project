@@ -72,6 +72,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/Crowdsale.sol`](./contracts/Crowdsale.sol), [`scripts/DeployCrowdsale2.s.sol`](./scripts/DeployCrowdsale2.s.sol)
 *   **Status:** Verified
 
+### Escrow (Basic Utility)
+*   **Project Summary:** This project deploys an Escrow contract that holds funds for a beneficiary, releasable after a deadline.
+*   **Deployed Address:** [0x5CCA4e566b5830c0AB017B21389E877CC8DF7150](https://testnet.monadexplorer.com/address/0x5CCA4e566b5830c0AB017B21389E877CC8DF7150)
+*   **Key Files:** [`contracts/Escrow.sol`](./contracts/Escrow.sol), [`scripts/DeployEscrow.s.sol`](./scripts/DeployEscrow.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:
