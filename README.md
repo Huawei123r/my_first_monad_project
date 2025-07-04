@@ -60,6 +60,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/TodoList.sol`](./contracts/TodoList.sol), [`scripts/DeployTodoList.s.sol`](./scripts/DeployTodoList.s.sol)
 *   **Status:** Verified
 
+### Box (Upgradeable Contract)
+*   **Project Summary:** An upgradeable contract using the UUPS proxy pattern. It stores a single `uint256` value that can be updated by the owner.
+*   **Deployed Address:** [0x61DE40ee9DA523A96Da02A5521c4122B69EFF22C](https://testnet.monadexplorer.com/address/0x61DE40ee9DA523A96Da02A5521c4122B69EFF22C)
+*   **Key Files:** [`contracts/Box.sol`](./contracts/Box.sol), [`scripts/DeployBox.s.sol`](./scripts/DeployBox.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:

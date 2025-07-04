@@ -281,3 +281,32 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `forge script scripts/DeployNFTMarketplace.s.sol --rpc-url https://testnet-rpc.monad.xyz --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --chain-id 10143 --contracts contracts/NFTMarketplace.sol -vvvv`
 ---
+---
+**Journal Entry: Box (Upgradeable Contract)**
+
+* **Project Name:** Box
+* **Category:** Upgradeable Contract
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 04, 2025 at 03:45:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** 
+    * Proxy: https://testnet.monadexplorer.com/address/0x61DE40ee9DA523A96Da02A5521c4122B69EFF22C
+    * Implementation: https://testnet.monadexplorer.com/address/0xa17B79718Ca9146D65B4c4E274c6E08b2cFc81E8
+* **Key Files Created:**
+    * `contracts/Box.sol`
+    * `scripts/DeployBox.s.sol`
+* **Project Summary:** This project deploys an upgradeable `Box` contract using the UUPS proxy pattern. It stores a single `uint256` value that can be updated by the owner.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (UUPSUpgradeable, OwnableUpgradeable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To store a new value (only by owner):
+           `cast send 0x61DE40ee9DA523A96Da02A5521c4122B69EFF22C "store(uint256)" NEW_VALUE --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. To retrieve the current value:
+           `cast call 0x61DE40ee9DA523A96Da02A5521c4122B69EFF22C "retrieve()(uint256)" --rpc-url https://testnet-rpc.monad.xyz`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeployBox.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---
