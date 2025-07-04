@@ -78,6 +78,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/Escrow.sol`](./contracts/Escrow.sol), [`scripts/DeployEscrow.s.sol`](./scripts/DeployEscrow.s.sol)
 *   **Status:** Verified
 
+### EventLogger 2 (Off-Chain Data / Indexing Focus)
+*   **Project Summary:** This project deploys a simple contract for logging events on the blockchain.
+*   **Deployed Address:** [0xAc3275D6cE832e3b3ac32622C4040c10a87CFc67](https://testnet.monadexplorer.com/address/0xAc3275D6cE832e3b3ac32622C4040c10a87CFc67)
+*   **Key Files:** [`contracts/EventLogger.sol`](./contracts/EventLogger.sol), [`scripts/DeployEventLogger2.s.sol`](./scripts/DeployEventLogger2.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:

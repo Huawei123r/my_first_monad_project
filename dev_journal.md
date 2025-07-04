@@ -396,3 +396,30 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `source .env && forge script scripts/DeployEscrow.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
 ---
+---
+**Journal Entry: EventLogger 2 (Off-Chain Data / Indexing Focus)**
+
+* **Project Name:** EventLogger 2
+* **Category:** Off-Chain Data / Indexing Focus
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 04, 2025 at 04:45:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0xAc3275D6cE832e3b3ac32622C4040c10a87CFc67
+* **Key Files Created:**
+    * `contracts/EventLogger.sol`
+    * `scripts/DeployEventLogger2.s.sol`
+* **Project Summary:** This project deploys a simple contract for logging events on the blockchain. It provides functions to emit string messages and numerical values, which can be used for off-chain data indexing and monitoring.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To log a message:
+           `cast send 0xAc3275D6cE832e3b3ac32622C4040c10a87CFc67 "logMessage(string)" "Hello Monad!" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. To log a value:
+           `cast send 0xAc3275D6cE832e3b3ac32622C4040c10a87CFc67 "logValue(uint256)" 12345 --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeployEventLogger2.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---
