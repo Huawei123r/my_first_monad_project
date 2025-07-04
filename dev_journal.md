@@ -310,3 +310,31 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `source .env && forge script scripts/DeployBox.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
 ---
+---
+**Journal Entry: BoxV2 (Contract Upgrade)**
+
+* **Project Name:** BoxV2
+* **Category:** Contract Upgrade
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 04, 2025 at 04:00:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** 
+    * New Implementation: https://testnet.monadexplorer.com/address/0xfA0fBA8C24A818d1E2B56fc9B94bC5714DDF39B5
+* **Key Files Created:**
+    * `contracts/BoxV2.sol`
+    * `scripts/DeployBoxV2.s.sol`
+* **Project Summary:** This project deploys a new implementation for the `Box` contract, `BoxV2`, which adds an `increment()` function. The original `Box` proxy was then upgraded to use this new implementation.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (UUPSUpgradeable, OwnableUpgradeable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To call the new `increment` function on the original proxy:
+           `cast send 0x61DE40ee9DA523A96Da02A5521c4122B69EFF22C "increment()" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. To retrieve the value after incrementing:
+           `cast call 0x61DE40ee9DA523A96Da02A5521c4122B69EFF22C "retrieve()(uint256)" --rpc-url https://testnet-rpc.monad.xyz`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeployBoxV2.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---

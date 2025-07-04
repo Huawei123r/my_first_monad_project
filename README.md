@@ -61,9 +61,9 @@ Here's a summary of the projects included in this portfolio:
 *   **Status:** Verified
 
 ### Box (Upgradeable Contract)
-*   **Project Summary:** An upgradeable contract using the UUPS proxy pattern. It stores a single `uint256` value that can be updated by the owner.
+*   **Project Summary:** An upgradeable contract using the UUPS proxy pattern. It stores a single `uint256` value that can be updated by the owner. This contract has been upgraded to `BoxV2` to include an `increment()` function.
 *   **Deployed Address:** [0x61DE40ee9DA523A96Da02A5521c4122B69EFF22C](https://testnet.monadexplorer.com/address/0x61DE40ee9DA523A96Da02A5521c4122B69EFF22C)
-*   **Key Files:** [`contracts/Box.sol`](./contracts/Box.sol), [`scripts/DeployBox.s.sol`](./scripts/DeployBox.s.sol)
+*   **Key Files:** [`contracts/Box.sol`](./contracts/Box.sol), [`contracts/BoxV2.sol`](./contracts/BoxV2.sol), [`scripts/DeployBox.s.sol`](./scripts/DeployBox.s.sol), [`scripts/DeployBoxV2.s.sol`](./scripts/DeployBoxV2.s.sol)
 *   **Status:** Verified
 
 ## Getting Started
