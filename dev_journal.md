@@ -423,3 +423,30 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `source .env && forge script scripts/DeployEventLogger2.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
 ---
+---
+**Journal Entry: Faucet (Basic Utility)**
+
+* **Project Name:** Faucet
+* **Category:** Basic Utility
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 04, 2025 at 05:00:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** 
+    * MyToken: https://testnet.monadexplorer.com/address/0x31aD558832e5ED29766671cA827492940a9191b3
+    * Faucet: https://testnet.monadexplorer.com/address/0x88fCdCA4af91b3BAC58c27AE2FD835B8c89392Ef
+* **Key Files Created:**
+    * `contracts/Faucet.sol`
+    * `scripts/DeployFaucet.s.sol`
+* **Project Summary:** This project deploys a Faucet contract that distributes a fixed amount of ERC20 tokens to users once per day.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (ERC20), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To request tokens:
+           `cast send 0x88fCdCA4af91b3BAC58c27AE2FD835B8c89392Ef "requestTokens()" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeployFaucet.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---

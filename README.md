@@ -84,6 +84,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/EventLogger.sol`](./contracts/EventLogger.sol), [`scripts/DeployEventLogger2.s.sol`](./scripts/DeployEventLogger2.s.sol)
 *   **Status:** Verified
 
+### Faucet (Basic Utility)
+*   **Project Summary:** This project deploys a Faucet contract that distributes a fixed amount of ERC20 tokens to users once per day.
+*   **Deployed Address:** [0x88fCdCA4af91b3BAC58c27AE2FD835B8c89392Ef](https://testnet.monadexplorer.com/address/0x88fCdCA4af91b3BAC58c27AE2FD835B8c89392Ef)
+*   **Key Files:** [`contracts/Faucet.sol`](./contracts/Faucet.sol), [`scripts/DeployFaucet.s.sol`](./scripts/DeployFaucet.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:
