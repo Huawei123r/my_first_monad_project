@@ -338,3 +338,34 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `source .env && forge script scripts/DeployBoxV2.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
 ---
+---
+**Journal Entry: Crowdsale 2 (Basic DeFi Protocol)**
+
+* **Project Name:** Crowdsale 2
+* **Category:** Basic DeFi Protocol
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 04, 2025 at 04:15:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** 
+    * MyToken: https://testnet.monadexplorer.com/address/0x162e55308f601B98139B6cCa55d742948679B612
+    * Crowdsale: https://testnet.monadexplorer.com/address/0x865ffa8b472856210b66586017437dc4DbD3A749
+* **Key Files Created:**
+    * `contracts/Crowdsale.sol`
+    * `scripts/DeployCrowdsale2.s.sol`
+* **Project Summary:** This project implements a basic crowdsale contract where users can purchase a custom ERC-20 token (MyCrowdsaleToken) with ETH. The crowdsale has a defined rate (tokens per ETH) and a cap on the total ETH raised. The ownership of the ERC-20 token is transferred to the Crowdsale contract upon deployment.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (ERC20, Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To buy tokens:
+           `cast send 0x865ffa8b472856210b66586017437dc4DbD3A749 "buyTokens(address)" YOUR_ADDRESS --value 0.1ether --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. To withdraw funds (only by owner):
+           `cast send 0x865ffa8b472856210b66586017437dc4DbD3A749 "withdrawFunds()" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        5. To check the total supply of MyCrowdsaleToken:
+           `cast call 0x162e55308f601B98139B6cCa55d742948679B612 "totalSupply()(uint256)" --rpc-url https://testnet-rpc.monad.xyz`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeployCrowdsale2.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---

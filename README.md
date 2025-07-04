@@ -66,6 +66,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/Box.sol`](./contracts/Box.sol), [`contracts/BoxV2.sol`](./contracts/BoxV2.sol), [`scripts/DeployBox.s.sol`](./scripts/DeployBox.s.sol), [`scripts/DeployBoxV2.s.sol`](./scripts/DeployBoxV2.s.sol)
 *   **Status:** Verified
 
+### Crowdsale 2 (Basic DeFi Protocol)
+*   **Project Summary:** This project deploys a basic Decentralized Exchange (DEX) contract that allows for swapping between two ERC-20 tokens (MyFirstToken and SecondToken). It includes functions for adding liquidity and performing swaps based on a simple x*y=k constant product formula.
+*   **Deployed Address:** [0x865ffa8b472856210b66586017437dc4DbD3A749](https://testnet.monadexplorer.com/address/0x865ffa8b472856210b66586017437dc4DbD3A749)
+*   **Key Files:** [`contracts/Crowdsale.sol`](./contracts/Crowdsale.sol), [`scripts/DeployCrowdsale2.s.sol`](./scripts/DeployCrowdsale2.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:
