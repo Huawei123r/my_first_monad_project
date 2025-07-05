@@ -514,3 +514,30 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `source .env && forge script scripts/DeployMultiSigWallet.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
 ---
+---
+**Journal Entry: MyERC1155Token 2 (Core Token Standard)**
+
+* **Project Name:** MyERC1155Token 2
+* **Category:** Core Token Standard
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 04, 2025 at 05:45:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0x9477EB902A9b0Cb652e9E7BE207483Ae08F788Ca
+* **Key Files Created:**
+    * `contracts/MyERC1155Token.sol`
+    * `scripts/DeployMyERC1155Token2.s.sol`
+* **Project Summary:** This project deploys a basic ERC-1155 multi-token standard contract. It includes functions for minting and burning tokens, with initial tokens minted during deployment.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (ERC1155, Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To check the balance of a token ID for an address:
+           `cast call 0x9477EB902A9b0Cb652e9E7BE207483Ae08F788Ca "balanceOf(address,uint256)(uint256)" YOUR_ADDRESS TOKEN_ID --rpc-url https://testnet-rpc.monad.xyz`
+        4. To mint new tokens (only by owner):
+           `cast send 0x9477EB902A9b0Cb652e9E7BE207483Ae08F788Ca "mint(address,uint256,uint256,bytes)" RECIPIENT_ADDRESS TOKEN_ID AMOUNT "0x" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeployMyERC1155Token2.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---

@@ -102,6 +102,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/MultiSigWallet.sol`](./contracts/MultiSigWallet.sol), [`scripts/DeployMultiSigWallet.s.sol`](./scripts/DeployMultiSigWallet.s.sol)
 *   **Status:** Verified
 
+### MyERC1155Token 2 (Core Token Standard)
+*   **Project Summary:** This project deploys a basic ERC-1155 multi-token standard contract.
+*   **Deployed Address:** [0x9477EB902A9b0Cb652e9E7BE207483Ae08F788Ca](https://testnet.monadexplorer.com/address/0x9477EB902A9b0Cb652e9E7BE207483Ae08F788Ca)
+*   **Key Files:** [`contracts/MyERC1155Token.sol`](./contracts/MyERC1155Token.sol), [`scripts/DeployMyERC1155Token2.s.sol`](./scripts/DeployMyERC1155Token2.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:
