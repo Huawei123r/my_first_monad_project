@@ -487,3 +487,30 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `source .env && forge script scripts/DeployLendingBorrowing2.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
 ---
+---
+**Journal Entry: Multi-Sig Wallet (Governance)**
+
+* **Project Name:** Multi-Sig Wallet
+* **Category:** Governance
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 04, 2025 at 05:30:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0x945e5EA822Aa03aAA0031a5fd0E86719d93C28D8
+* **Key Files Created:**
+    * `contracts/MultiSigWallet.sol`
+    * `scripts/DeployMultiSigWallet.s.sol`
+* **Project Summary:** This project deploys a Multi-Signature Wallet that requires a specified number of owners to confirm a transaction before it can be executed.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: N/A
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To submit a transaction:
+           `cast send 0x945e5EA822Aa03aAA0031a5fd0E86719d93C28D8 "submitTransaction(address,uint256,bytes)" DESTINATION_ADDRESS VALUE_IN_WEI "0x" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. To confirm a transaction:
+           `cast send 0x945e5EA822Aa03aAA0031a5fd0E86719d93C28D8 "confirmTransaction(uint256)" TRANSACTION_ID --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeployMultiSigWallet.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---

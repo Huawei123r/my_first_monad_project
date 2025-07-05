@@ -96,6 +96,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/LendingBorrowing.sol`](./contracts/LendingBorrowing.sol), [`scripts/DeployLendingBorrowing2.s.sol`](./scripts/DeployLendingBorrowing2.s.sol)
 *   **Status:** Verified
 
+### Multi-Sig Wallet (Governance)
+*   **Project Summary:** This project deploys a Multi-Signature Wallet that requires a specified number of owners to confirm a transaction before it can be executed.
+*   **Deployed Address:** [0x945e5EA822Aa03aAA0031a5fd0E86719d93C28D8](https://testnet.monadexplorer.com/address/0x945e5EA822Aa03aAA0031a5fd0E86719d93C28D8)
+*   **Key Files:** [`contracts/MultiSigWallet.sol`](./contracts/MultiSigWallet.sol), [`scripts/DeployMultiSigWallet.s.sol`](./scripts/DeployMultiSigWallet.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:
