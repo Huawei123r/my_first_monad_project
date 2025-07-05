@@ -108,6 +108,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/MyERC1155Token.sol`](./contracts/MyERC1155Token.sol), [`scripts/DeployMyERC1155Token2.s.sol`](./scripts/DeployMyERC1155Token2.s.sol)
 *   **Status:** Verified
 
+### NFTMarketplace 2 (Marketplace Concepts)
+*   **Project Summary:** This project implements a basic NFT marketplace where users can list their ERC-721 NFTs for sale and other users can purchase them with ETH.
+*   **Deployed Address:** [0x28Db1fED7b8752D0d8e71c90C6b499CF100bEfe2](https://testnet.monadexplorer.com/address/0x28Db1fED7b8752D0d8e71c90C6b499CF100bEfe2)
+*   **Key Files:** [`contracts/NFTMarketplace.sol`](./contracts/NFTMarketplace.sol), [`scripts/DeployNFTMarketplace2.s.sol`](./scripts/DeployNFTMarketplace2.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:

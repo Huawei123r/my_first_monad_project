@@ -541,3 +541,36 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `source .env && forge script scripts/DeployMyERC1155Token2.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
 ---
+---
+**Journal Entry: NFTMarketplace 2 (Marketplace Concepts)**
+
+* **Project Name:** NFTMarketplace 2
+* **Category:** Marketplace Concepts
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 04, 2025 at 06:00:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** 
+    * NFTMarketplace: https://testnet.monadexplorer.com/address/0x28Db1fED7b8752D0d8e71c90C6b499CF100bEfe2
+    * MyFirstNFT: https://testnet.monadexplorer.com/address/0x42e420cfBd1564D07E936Dd4D7bF36C01Db58CEb
+* **Key Files Created:**
+    * `contracts/NFTMarketplace.sol`
+    * `scripts/DeployNFTMarketplace2.s.sol`
+* **Project Summary:** This project implements a basic NFT marketplace where users can list their ERC-721 NFTs for sale and other users can purchase them with ETH. It includes functions for listing, buying, and unlisting NFTs.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (IERC721, Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. Mint an NFT (if you don't have one):
+           `cast send 0x42e420cfBd1564D07E936Dd4D7bF36C01Db58CEb "mint(address)" YOUR_ADDRESS --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. Approve the marketplace to transfer your NFT:
+           `cast send 0x42e420cfBd1564D07E936Dd4D7bF36C01Db58CEb "approve(address,uint256)" 0x28Db1fED7b8752D0d8e71c90C6b499CF100bEfe2 TOKEN_ID --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        5. To list an NFT for sale:
+           `cast send 0x28Db1fED7b8752D0d8e71c90C6b499CF100bEfe2 "listNFT(address,uint256,uint256)" 0x42e420cfBd1564D07E936Dd4D7bF36C01Db58CEb TOKEN_ID PRICE_IN_WEI --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        6. To buy an NFT:
+           `cast send 0x28Db1fED7b8752D0d8e71c90C6b499CF100bEfe2 "buyNFT(address,uint256)" 0x42e420cfBd1564D07E936Dd4D7bF36C01Db58CEb TOKEN_ID --value PRICE_IN_WEI --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeployNFTMarketplace2.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---
