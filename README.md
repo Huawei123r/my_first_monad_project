@@ -114,6 +114,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/NFTMarketplace.sol`](./contracts/NFTMarketplace.sol), [`scripts/DeployNFTMarketplace2.s.sol`](./scripts/DeployNFTMarketplace2.s.sol)
 *   **Status:** Verified
 
+### Owner (Access Control)
+*   **Project Summary:** This project deploys a simple contract that demonstrates the use of OpenZeppelin's `Ownable` for access control.
+*   **Deployed Address:** [0xF37c9998bd6b51D5b2E9996aAf50Fd8fDF975a21](https://testnet.monadexplorer.com/address/0xF37c9998bd6b51D5b2E9996aAf50Fd8fDF975a21)
+*   **Key Files:** [`contracts/Owner.sol`](./contracts/Owner.sol), [`scripts/DeployOwner.s.sol`](./scripts/DeployOwner.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:

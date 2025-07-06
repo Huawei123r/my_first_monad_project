@@ -574,3 +574,28 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `source .env && forge script scripts/DeployNFTMarketplace2.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
 ---
+---
+**Journal Entry: Owner (Access Control)**
+
+* **Project Name:** Owner
+* **Category:** Access Control
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 04, 2025 at 06:15:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0xF37c9998bd6b51D5b2E9996aAf50Fd8fDF975a21
+* **Key Files Created:**
+    * `contracts/Owner.sol`
+    * `scripts/DeployOwner.s.sol`
+* **Project Summary:** This project deploys a simple contract that demonstrates the use of OpenZeppelin's `Ownable` for access control.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To set the message (only by owner):
+           `cast send 0xF37c9998bd6b51D5b2E9996aAf50Fd8fDF975a21 "setMessage(string)" "Hello Monad!" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeployOwner.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---
