@@ -126,6 +126,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/Pausable.sol`](./contracts/Pausable.sol), [`scripts/DeployPausable.s.sol`](./scripts/DeployPausable.s.sol)
 *   **Status:** Verified
 
+### Payment Splitter (Finance)
+*   **Project Summary:** This project deploys a contract that splits payments among multiple payees according to predefined shares.
+*   **Deployed Address:** [0xe643E7c0AdcDFc4A69903173A2F9EC0A6A486745](https://testnet.monadexplorer.com/address/0xe643E7c0AdcDFc4A69903173A2F9EC0A6A486745)
+*   **Key Files:** [`contracts/PaymentSplitter.sol`](./contracts/PaymentSplitter.sol), [`scripts/DeployPaymentSplitter.s.sol`](./scripts/DeployPaymentSplitter.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:

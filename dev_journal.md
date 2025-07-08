@@ -626,3 +626,28 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `source .env && forge script scripts/DeployPausable.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
 ---
+---
+**Journal Entry: Payment Splitter (Finance)**
+
+* **Project Name:** Payment Splitter
+* **Category:** Finance
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 04, 2025 at 06:45:00 PM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0xe643E7c0AdcDFc4A69903173A2F9EC0A6A486745
+* **Key Files Created:**
+    * `contracts/PaymentSplitter.sol`
+    * `scripts/DeployPaymentSplitter.s.sol`
+* **Project Summary:** This project deploys a contract that splits payments among multiple payees according to predefined shares.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (PaymentSplitter), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To release funds to a payee:
+           `cast send 0xe643E7c0AdcDFc4A69903173A2F9EC0A6A486745 "release(address)" PAYEE_ADDRESS --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeployPaymentSplitter.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---
