@@ -120,6 +120,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/Owner.sol`](./contracts/Owner.sol), [`scripts/DeployOwner.s.sol`](./scripts/DeployOwner.s.sol)
 *   **Status:** Verified
 
+### Pausable Contract (Security Pattern)
+*   **Project Summary:** This project deploys a contract that demonstrates the use of OpenZeppelin's `Pausable` for access control.
+*   **Deployed Address:** [0x15DaD6824d079CFDC6973bee70da01f5E4ED7190](https://testnet.monadexplorer.com/address/0x15DaD6824d079CFDC6973bee70da01f5E4ED7190)
+*   **Key Files:** [`contracts/Pausable.sol`](./contracts/Pausable.sol), [`scripts/DeployPausable.s.sol`](./scripts/DeployPausable.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:
