@@ -651,3 +651,30 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `source .env && forge script scripts/DeployPaymentSplitter.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
 ---
+---
+**Journal Entry: Pausable Contract (Security Pattern)**
+
+* **Project Name:** Pausable Contract
+* **Category:** Security Pattern
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 08, 2025 at 10:00:00 AM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0x15DaD6824d079CFDC6973bee70da01f5E4ED7190
+* **Key Files Created:**
+    * `contracts/Pausable.sol`
+    * `scripts/DeployPausable.s.sol`
+* **Project Summary:** This project deploys a contract that demonstrates the use of OpenZeppelin's `Pausable` for access control.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (Pausable, Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To pause the contract (only by owner):
+           `cast send 0x15DaD6824d079CFDC6973bee70da01f5E4ED7190 "pause()" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+        4. To unpause the contract (only by owner):
+           `cast send 0x15DaD6824d079CFDC6973bee70da01f5E4ED7190 "unpause()" --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeployPausable.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---

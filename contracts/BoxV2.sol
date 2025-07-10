@@ -5,6 +5,6 @@ import "./Box.sol";
 
 contract BoxV2 is Box {
     function increment() public {
-        value = value + 1;
+        _value = _value + 1;
     }
 }

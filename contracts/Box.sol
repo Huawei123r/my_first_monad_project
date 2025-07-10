@@ -5,12 +5,12 @@ import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 
 contract Box is UUPSUpgradeable, OwnableUpgradeable {
-    uint256 private _value;
+    uint256 internal _value;
 
     event ValueChanged(uint256 newValue);
 
     function initialize(uint256 value) initializer public {
-        __Ownable_init(msg.sender);
+        __Ownable_init();
         __UUPSUpgradeable_init();
         _value = value;
     }
