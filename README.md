@@ -138,6 +138,12 @@ Here's a summary of the projects included in this portfolio:
 *   **Key Files:** [`contracts/PaymentSplitter.sol`](./contracts/PaymentSplitter.sol), [`scripts/DeployPaymentSplitter.s.sol`](./scripts/DeployPaymentSplitter.s.sol)
 *   **Status:** Verified
 
+### SimpleNFT (Core Token Standard)
+*   **Project Summary:** This project deploys a basic ERC-721 NFT contract.
+*   **Deployed Address:** [0xbD00c462B045176249069A5b404FCb9Cd74eAC2B](https://testnet.monadexplorer.com/address/0xbD00c462B045176249069A5b404FCb9Cd74eAC2B)
+*   **Key Files:** [`contracts/SimpleNFT.sol`](./contracts/SimpleNFT.sol), [`scripts/DeploySimpleNFT.s.sol`](./scripts/DeploySimpleNFT.s.sol)
+*   **Status:** Verified
+
 ## Getting Started
 
 To explore these projects locally, follow these steps:

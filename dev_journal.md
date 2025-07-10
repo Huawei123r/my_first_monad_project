@@ -678,3 +678,28 @@
 * **Verification Status:** Verified
 * **Verification Command (if applicable):** `source .env && forge script scripts/DeployPausable.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
 ---
+---
+**Journal Entry: SimpleNFT (Core Token Standard)**
+
+* **Project Name:** SimpleNFT
+* **Category:** Core Token Standard
+* **Network:** Monad Testnet
+* **Deployment Timestamp:** July 08, 2025 at 10:15:00 AM
+* **GitHub Repository URL:** https://github.com/Huawei123r/my_first_monad_project
+* **Monad Explorer Contract URL(s):** https://testnet.monadexplorer.com/address/0xbD00c462B045176249069A5b404FCb9Cd74eAC2B
+* **Key Files Created:**
+    * `contracts/SimpleNFT.sol`
+    * `scripts/DeploySimpleNFT.s.sol`
+* **Project Summary:** This project deploys a basic ERC-721 NFT contract.
+* **Technical Details:**
+    * Solidity Version: 0.8.20
+    * Framework Used: Foundry
+    * Key Libraries: OpenZeppelin (ERC721, Ownable), forge-std
+    * Interaction Instructions:
+        1. Ensure you have Foundry installed and configured.
+        2. Set up your environment variables (MONAD_RPC_URL, PRIVATE_KEY) in a `.env` file.
+        3. To mint a new NFT (only by owner):
+           `cast send 0xbD00c462B045176249069A5b404FCb9Cd74eAC2B "safeMint(address)" RECIPIENT_ADDRESS --rpc-url https://testnet-rpc.monad.xyz --private-key YOUR_PRIVATE_KEY`
+* **Verification Status:** Verified
+* **Verification Command (if applicable):** `source .env && forge script scripts/DeploySimpleNFT.s.sol --rpc-url $MONAD_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org/ --legacy`
+---
