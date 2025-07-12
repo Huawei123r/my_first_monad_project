@@ -1,6 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
+/**
+ * @title MultiSigWallet
+ * @dev A simple multi-signature wallet that requires a minimum number of owners to confirm a transaction before it can be executed.
+ * This contract is a from-scratch implementation of a multi-sig wallet.
+ */
 contract MultiSigWallet {
     event Submission(uint indexed transactionId);
     event Confirmation(address indexed sender, uint indexed transactionId);
@@ -41,6 +46,11 @@ contract MultiSigWallet {
         _;
     }
 
+    /**
+     * @dev Initializes the multi-sig wallet with a list of owners and the required number of confirmations.
+     * @param _owners The addresses of the owners.
+     * @param _required The number of required confirmations.
+     */
     constructor(address[] memory _owners, uint _required) {
         require(_owners.length > 0, "Owners required.");
         require(_required > 0 && _required <= _owners.length, "Invalid required number of owners.");
@@ -53,6 +63,13 @@ contract MultiSigWallet {
         required = _required;
     }
 
+    /**
+     * @dev Submits a new transaction to the wallet.
+     * @param destination The destination address of the transaction.
+     * @param value The value to send with the transaction.
+     * @param data The data to send with the transaction.
+     * @return transactionId The ID of the new transaction.
+     */
     function submitTransaction(address destination, uint value, bytes memory data)
         public
         onlyOwner
@@ -68,6 +85,10 @@ contract MultiSigWallet {
         emit Submission(transactionId);
     }
 
+    /**
+     * @dev Confirms a transaction.
+     * @param transactionId The ID of the transaction to confirm.
+     */
     function confirmTransaction(uint transactionId)
         public
         onlyOwner
@@ -77,9 +98,14 @@ contract MultiSigWallet {
     {
         confirmations[transactionId][msg.sender] = true;
         emit Confirmation(msg.sender, transactionId);
+        // Attempt to execute the transaction after each confirmation.
         executeTransaction(transactionId);
     }
 
+    /**
+     * @dev Executes a transaction if it has enough confirmations.
+     * @param transactionId The ID of the transaction to execute.
+     */
     function executeTransaction(uint transactionId)
         public
         onlyOwner
@@ -90,14 +116,38 @@ contract MultiSigWallet {
             Transaction storage txn = transactions[transactionId];
             txn.executed = true;
             (bool success, ) = txn.destination.call{value: txn.value}(txn.data);
-            if (success)
+            if (success) {
                 emit Execution(transactionId);
-            else {
+            } else {
                 emit ExecutionFailure(transactionId);
                 txn.executed = false;
             }
         }
     }
+
+    /**
+     * @dev Checks if a transaction has enough confirmations.
+     * @param transactionId The ID of the transaction to check.
+     * @return bool True if the transaction is confirmed, false otherwise.
+     */
+    function isConfirmed(uint transactionId)
+        public
+        view
+        returns (bool)
+    {
+        uint count = 0;
+        for (uint i = 0; i < owners.length; i++) {
+            if (confirmations[transactionId][owners[i]]) {
+                count++;
+            }
+            if (count == required) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // --- View Functions ---
 
     function getOwners()
         public
@@ -113,24 +163,10 @@ contract MultiSigWallet {
         returns (uint count)
     {
         for (uint i = 0; i < owners.length; i++) {
-            if (confirmations[transactionId][owners[i]])
-                count += 1;
+            if (confirmations[transactionId][owners[i]]) {
+                count++;
+            }
         }
-    }
-
-    function isConfirmed(uint transactionId)
-        public
-        view
-        returns (bool)
-    {
-        uint count = 0;
-        for (uint i = 0; i < owners.length; i++) {
-            if (confirmations[transactionId][owners[i]])
-                count += 1;
-            if (count == required)
-                return true;
-        }
-        return false;
     }
 
     receive() external payable {}

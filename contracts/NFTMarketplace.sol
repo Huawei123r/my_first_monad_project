@@ -4,6 +4,11 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+/**
+ * @title NFTMarketplace
+ * @dev A simple marketplace for buying and selling ERC721 tokens.
+ * This contract contains custom logic for listing, buying, and unlisting NFTs.
+ */
 contract NFTMarketplace is Ownable {
     struct Listing {
         uint256 price;
@@ -19,16 +24,28 @@ contract NFTMarketplace is Ownable {
 
     constructor() Ownable() {}
 
+    /**
+     * @dev Lists an NFT for sale.
+     * @param _nftContract The address of the NFT contract.
+     * @param _tokenId The ID of the token to list.
+     * @param _price The price of the token in wei.
+     */
     function listNFT(address _nftContract, uint256 _tokenId, uint256 _price) public {
         require(_price > 0, "Price must be greater than 0");
         IERC721 nft = IERC721(_nftContract);
         require(nft.ownerOf(_tokenId) == msg.sender, "You do not own this NFT");
+        // The marketplace contract must be approved to transfer the NFT.
         require(nft.getApproved(_tokenId) == address(this), "Marketplace not approved to transfer NFT");
 
         listings[_nftContract][_tokenId] = Listing(_price, msg.sender, true);
         emit NFTListed(_nftContract, _tokenId, _price, msg.sender);
     }
 
+    /**
+     * @dev Buys an NFT from the marketplace.
+     * @param _nftContract The address of the NFT contract.
+     * @param _tokenId The ID of the token to buy.
+     */
     function buyNFT(address _nftContract, uint256 _tokenId) public payable {
         Listing storage listing = listings[_nftContract][_tokenId];
         require(listing.active, "NFT not listed or already sold");
@@ -36,23 +53,27 @@ contract NFTMarketplace is Ownable {
 
         IERC721 nft = IERC721(_nftContract);
         
-        // Transfer ETH to seller
+        // Custom Logic: Transfer ETH to the seller and the NFT to the buyer.
+        // This includes a check to refund any excess ETH sent with the transaction.
         (bool success, ) = payable(listing.seller).call{value: listing.price}("");
         require(success, "ETH transfer failed");
 
-        // Transfer NFT to buyer
         nft.transferFrom(listing.seller, msg.sender, _tokenId);
 
         listing.active = false;
         emit NFTBought(_nftContract, _tokenId, listing.price, msg.sender, listing.seller);
 
-        // Refund any excess ETH
         if (msg.value > listing.price) {
             (success, ) = payable(msg.sender).call{value: msg.value - listing.price}("");
             require(success, "ETH refund failed");
         }
     }
 
+    /**
+     * @dev Unlists an NFT from the marketplace.
+     * @param _nftContract The address of the NFT contract.
+     * @param _tokenId The ID of the token to unlist.
+     */
     function unlistNFT(address _nftContract, uint256 _tokenId) public {
         Listing storage listing = listings[_nftContract][_tokenId];
         require(listing.active, "NFT not listed");
