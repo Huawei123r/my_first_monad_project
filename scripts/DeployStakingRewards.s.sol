@@ -7,20 +7,18 @@ import {MyFirstToken} from "../contracts/MyFirstToken.sol";
 import {SecondToken} from "../contracts/SecondToken.sol";
 
 contract DeployStakingRewards is Script {
-    function run() public returns (StakingRewards, MyFirstToken, SecondToken) {
+    function run() public returns (StakingRewards) {
         vm.startBroadcast();
 
-        // Deploy Staking Token with an initial supply
-        MyFirstToken stakingToken = new MyFirstToken(1000000 * 10 ** 18); // 1,000,000 tokens
-
-        // Deploy Rewards Token with an initial supply
-        SecondToken rewardsToken = new SecondToken(1000000 * 10 ** 18); // 1,000,000 tokens
+        // Use existing token contracts
+        MyFirstToken stakingToken = MyFirstToken(0x46E4cb3B7763a5819B94F18FB1B14fb9B5208790);
+        SecondToken rewardsToken = SecondToken(0x11C3F7863d7A2cee3BCE4e68B381493b1589EB3d);
 
         // Deploy StakingRewards contract
         StakingRewards stakingRewards = new StakingRewards(address(stakingToken), address(rewardsToken));
 
         vm.stopBroadcast();
 
-        return (stakingRewards, stakingToken, rewardsToken);
+        return stakingRewards;
     }
 }

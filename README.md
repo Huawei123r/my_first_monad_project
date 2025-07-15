@@ -33,6 +33,11 @@ _Monad dev portfolio showcasing DeFi, NFTs, and security primitives for ecosyste
 | **Pausable**            | [0x15Da...7190](https://testnet.monadexplorer.com/address/0x15DaD6824d079CFDC6973bee70da01f5E4ED7190) | `Security Pattern`              | Verified |
 | **Payment Splitter**    | [0xe643...6745](https://testnet.monadexplorer.com/address/0xe643E7c0AdcDFc4A69903173A2F9EC0A6A486745) | `Finance`                       | Verified |
 | **SimpleNFT**           | [0xbD00...AC2B](https://testnet.monadexplorer.com/address/0xbD00c462B045176249069A5b404FCb9Cd74eAC2B) | `ERC-721`                       | Verified |
+| **SimpleOracle**        | [0x8181...92dE](https://testnet.monadexplorer.com/address/0x81812Bc6aB788be391A1355C9410e35d5cd492dE) | `Data Feed`                     | Verified |
+| **SimpleToken**         | [0xB74a...A63E](https://testnet.monadexplorer.com/address/0xB74a8619db680f95f5B467151d98fFe72dBDA63E) | `ERC-20`                        | Deployed |
+| **StakingRewards**      | [0x74F9...e112](https://testnet.monadexplorer.com/address/0x74F9BE9352f4471A4ab3b1ae21f71CD37032e112) | `DeFi`                          | Deployed |
+| **TimeLock**            | [0x3170...9F64](https://testnet.monadexplorer.com/address/0x317021fAFCff4F8F220D8e30bB063A6C71c39F64) | `Utility`                       | Deployed |
+| **Voting**              | [0x5a3A...73B4](https://testnet.monadexplorer.com/address/0x5a3A3c54f81f167935Fa51C746248478B60873B4) | `Governance`                    | Deployed |
 
 ---
 
@@ -371,6 +376,26 @@ Here's a summary of the projects included in this portfolio:
 ### SimpleNFT (Core Token Standard)
 *   **Project Summary:** This project deploys a basic ERC-721 NFT contract.
 *   **Key Files:** [`contracts/SimpleNFT.sol`](./contracts/SimpleNFT.sol), [`scripts/DeploySimpleNFT.s.sol`](./scripts/DeploySimpleNFT.s.sol)
+
+### SimpleOracle (Data Feed)
+*   **Project Summary:** This project deploys a simple oracle contract that allows the owner to set and retrieve a data feed. This demonstrates a basic implementation of an oracle, which is a critical component of many DeFi applications.
+*   **Key Files:** [`contracts/SimpleOracle.sol`](./contracts/SimpleOracle.sol), [`scripts/DeploySimpleOracle.s.sol`](./scripts/DeploySimpleOracle.s.sol)
+
+### SimpleToken (Core Token Standard)
+*   **Project Summary:** This project deploys a basic ERC-20 token with a fixed supply. This demonstrates a simple token contract with no minting or burning capabilities.
+*   **Key Files:** [`contracts/SimpleToken.sol`](./contracts/SimpleToken.sol), [`scripts/DeploySimpleToken.s.sol`](./scripts/DeploySimpleToken.s.sol)
+
+### StakingRewards (DeFi)
+*   **Project Summary:** This project deploys a staking rewards contract that allows users to stake a token and earn rewards in another token. This demonstrates a common DeFi primitive.
+*   **Key Files:** [`contracts/StakingRewards.sol`](./contracts/StakingRewards.sol), [`scripts/DeployStakingRewards.s.sol`](./scripts/DeployStakingRewards.s.sol)
+
+### TimeLock (Utility)
+*   **Project Summary:** This project deploys a simple TimeLock contract that allows an owner to queue, execute, and cancel transactions. This is a common pattern for decentralized governance.
+*   **Key Files:** [`contracts/TimeLock.sol`](./contracts/TimeLock.sol), [`scripts/DeployTimeLock.s.sol`](./scripts/DeployTimeLock.s.sol)
+
+### Voting (Governance)
+*   **Project Summary:** This project deploys a basic voting contract that allows users to create proposals and vote on them. This demonstrates a simple implementation of a decentralized voting system.
+*   **Key Files:** [`contracts/Voting.sol`](./contracts/Voting.sol), [`scripts/DeployVoting.s.sol`](./scripts/DeployVoting.s.sol)
 
 ## Getting Started
 

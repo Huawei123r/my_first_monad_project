@@ -27,7 +27,7 @@ contract Lottery is Ownable {
 
     function pickWinner() public onlyOwner {
         require(players.length > 0, "No players in the lottery");
-        uint256 index = uint256(keccak256(abi.encodePacked(block.timestamp, block.difficulty, players))) % players.length;
+        uint256 index = uint256(keccak256(abi.encodePacked(block.timestamp, block.prevrandao, players))) % players.length;
         address winner = players[index];
         (bool success, ) = payable(winner).call{value: address(this).balance}("");
         require(success, "Transfer failed.");
